@@ -1,0 +1,7 @@
+[ 2024-08-19 17:57:49,466 ] 161 numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[ 2024-08-19 17:57:50,153 ] 12 root - INFO - Training has Started
+[ 2024-08-19 17:57:50,154 ] 41 root - INFO - Start the Data Ingestion
+[ 2024-08-19 17:57:51,883 ] 73 root - INFO - Performed Train test split on Dataframe
+[ 2024-08-19 17:57:51,883 ] 75 root - INFO - Done train test split on Dataframe
+[ 2024-08-19 17:57:51,916 ] 90 root - INFO - Exporting train and test file path
+[ 2024-08-19 17:57:51,917 ] 44 root - INFO - Data Ingestion Completed and artifact :DataIngestionArtifact(trained_file_path='Artifacts/08_19_2024_17_57_49/NetworkData/ingested/train.csv', test_file_path='Artifacts/08_19_2024_17_57_49/NetworkData/ingested/test.csv')
