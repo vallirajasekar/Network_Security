@@ -1,0 +1,19 @@
+[ 2024-08-28 10:10:00,127 ] 161 numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[ 2024-08-28 10:10:00,915 ] 12 root - INFO - Training has Started
+[ 2024-08-28 10:10:00,915 ] 41 root - INFO - Start the Data Ingestion
+[ 2024-08-28 10:10:02,972 ] 73 root - INFO - Performed Train test split on Dataframe
+[ 2024-08-28 10:10:02,972 ] 75 root - INFO - Done train test split on Dataframe
+[ 2024-08-28 10:10:03,006 ] 90 root - INFO - Exporting train and test file path
+[ 2024-08-28 10:10:03,006 ] 44 root - INFO - Data Ingestion Completed and artifact :DataIngestionArtifact(trained_file_path='Artifacts/08_28_2024_10_10_00/NetworkData/ingested/train.csv', test_file_path='Artifacts/08_28_2024_10_10_00/NetworkData/ingested/test.csv')
+[ 2024-08-28 10:10:03,018 ] 29 root - INFO - Required number of Columns:31
+[ 2024-08-28 10:10:03,018 ] 30 root - INFO - Dataframe has columns:31
+[ 2024-08-28 10:10:03,103 ] 141 root - INFO - Data Validation Artifact:DataValidationArtifact(validation_status=True, valid_train_file_path='Artifacts/08_28_2024_10_10_00/NetworkData/ingested/train.csv', valid_test_file_path='Artifacts/08_28_2024_10_10_00/NetworkData/ingested/test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts/08_28_2024_10_10_00/data_validation/drift_report/report.yaml')
+[ 2024-08-28 10:10:03,104 ] 55 root - INFO - Data Validation Completed and artifact :DataValidationArtifact(validation_status=True, valid_train_file_path='Artifacts/08_28_2024_10_10_00/NetworkData/ingested/train.csv', valid_test_file_path='Artifacts/08_28_2024_10_10_00/NetworkData/ingested/test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts/08_28_2024_10_10_00/data_validation/drift_report/report.yaml')
+[ 2024-08-28 10:10:03,104 ] 82 root - INFO - Entered initiate_data_transformation method of Datatransformation class
+[ 2024-08-28 10:10:03,104 ] 84 root - INFO - Started Data Transformation
+[ 2024-08-28 10:10:03,112 ] 66 root - INFO - Initialize KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2024-08-28 10:10:03,112 ] 72 root - INFO - Exited get_data_transformer object method of DataTransformation class
+[ 2024-08-28 10:10:03,112 ] 91 root - INFO - Got the Preprocessor object
+[ 2024-08-28 10:10:03,120 ] 62 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-08-28 10:10:03,123 ] 66 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-08-28 10:10:03,123 ] 126 root - INFO - Data transformation artifact:DataTransformationArtifact(transformed_object_file_path='Artifacts/08_28_2024_10_10_00/data_transformation/transformed_object/preprocessing.pkl', transformed_train_file_path='Artifacts/08_28_2024_10_10_00/data_transformation/transformed/train.npy', transformed_test_file_path='Artifacts/08_28_2024_10_10_00/data_transformation/transformed/test.npy')
