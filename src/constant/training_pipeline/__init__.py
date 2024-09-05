@@ -93,3 +93,11 @@ Model Pusher ralated constant start with MODEL PUSHER VAR NAME
 
 MODEL_PUSHER_DIR_NAME = "model_pusher"
 MODEL_PUSHER_SAVED_MODEL_DIR = SAVED_MODEL_DIR
+
+
+"""
+S3 CONFIGURATION
+"""
+
+TRAINING_BUCKET_NAME="mynetworksecurity2"
+PREDICTION_BUCKET_NAME="Network-dataSource"

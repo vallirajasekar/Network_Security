@@ -1,0 +1,23 @@
+[ 2024-09-04 16:36:08,287 ] 161 numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[ 2024-09-04 16:36:09,099 ] 12 root - INFO - Training has Started
+[ 2024-09-04 16:36:09,099 ] 47 root - INFO - Start the Data Ingestion
+[ 2024-09-04 16:36:11,073 ] 73 root - INFO - Performed Train test split on Dataframe
+[ 2024-09-04 16:36:11,074 ] 75 root - INFO - Done train test split on Dataframe
+[ 2024-09-04 16:36:11,106 ] 90 root - INFO - Exporting train and test file path
+[ 2024-09-04 16:36:11,106 ] 50 root - INFO - Data Ingestion Completed and artifact :DataIngestionArtifact(trained_file_path='Artifacts/09_04_2024_16_36_08/NetworkData/ingested/train.csv', test_file_path='Artifacts/09_04_2024_16_36_08/NetworkData/ingested/test.csv')
+[ 2024-09-04 16:36:11,118 ] 29 root - INFO - Required number of Columns:31
+[ 2024-09-04 16:36:11,118 ] 30 root - INFO - Dataframe has columns:31
+[ 2024-09-04 16:36:11,212 ] 141 root - INFO - Data Validation Artifact:DataValidationArtifact(validation_status=True, valid_train_file_path='Artifacts/09_04_2024_16_36_08/NetworkData/ingested/train.csv', valid_test_file_path='Artifacts/09_04_2024_16_36_08/NetworkData/ingested/test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts/09_04_2024_16_36_08/data_validation/drift_report/report.yaml')
+[ 2024-09-04 16:36:11,212 ] 61 root - INFO - Data Validation Completed and artifact :DataValidationArtifact(validation_status=True, valid_train_file_path='Artifacts/09_04_2024_16_36_08/NetworkData/ingested/train.csv', valid_test_file_path='Artifacts/09_04_2024_16_36_08/NetworkData/ingested/test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts/09_04_2024_16_36_08/data_validation/drift_report/report.yaml')
+[ 2024-09-04 16:36:11,212 ] 82 root - INFO - Entered initiate_data_transformation method of Datatransformation class
+[ 2024-09-04 16:36:11,212 ] 84 root - INFO - Started Data Transformation
+[ 2024-09-04 16:36:11,221 ] 66 root - INFO - Initialize KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2024-09-04 16:36:11,221 ] 72 root - INFO - Exited get_data_transformer object method of DataTransformation class
+[ 2024-09-04 16:36:11,221 ] 91 root - INFO - Got the Preprocessor object
+[ 2024-09-04 16:36:11,232 ] 62 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-09-04 16:36:11,234 ] 66 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-09-04 16:36:11,234 ] 126 root - INFO - Data transformation artifact:DataTransformationArtifact(transformed_object_file_path='Artifacts/09_04_2024_16_36_08/data_transformation/transformed_object/preprocessing.pkl', transformed_train_file_path='Artifacts/09_04_2024_16_36_08/data_transformation/transformed/train.npy', transformed_test_file_path='Artifacts/09_04_2024_16_36_08/data_transformation/transformed/test.npy')
+[ 2024-09-04 16:36:11,365 ] 62 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-09-04 16:36:11,370 ] 66 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-09-04 16:36:11,370 ] 76 root - INFO - Model Trainer artifact:ModelTrainerArtifact(trained_model_file_path='Artifacts/09_04_2024_16_36_08/model_trainer/trained_model/model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9872014511740401, precision_score=0.985711410746629, recall_score=0.9886960032297134), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9872014511740401, precision_score=0.985711410746629, recall_score=0.9886960032297134))
+[ 2024-09-04 16:36:11,418 ] 102 root - INFO - Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0010401087525648833, best_model_path='saved_models/1725447251/model.pkl', trained_model_path='Artifacts/09_04_2024_16_36_08/model_trainer/trained_model/model.pkl', train_model_metric_artifact=ClassificationMetricArtifact(f1_score=0.9849947278773623, precision_score=0.9837977965003241, recall_score=0.986194575280169), best_model_metric_artifact=ClassificationMetricArtifact(f1_score=0.9839546191247974, precision_score=0.9818858159469513, recall_score=0.9860321585187591))

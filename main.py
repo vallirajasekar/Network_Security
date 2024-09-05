@@ -3,11 +3,11 @@ import os
 
 import certifi
 ca = certifi.where()
-
+print(f'The ca is {ca}')
 from dotenv import load_dotenv
 load_dotenv()
 mongo_db_url = os.getenv("MONGODB_URL_KEY")
-print(mongo_db_url)
+print(f'The Mango_dd_url{mongo_db_url}')
 
 AWS_ACCESS_KEY_ID=os.getenv("AWS_ACCESS_KEY_ID_ENV_KEY")
 AWS_SECRET_ACCESS_KEY=os.getenv("AWS_SECRET_ACCESS_KEY_ENV_KEY")
@@ -18,7 +18,7 @@ os.environ["AWS_SECRET_ACCESS_KEY"]=AWS_SECRET_ACCESS_KEY
 import pymongo
 
 #from src.training_pipeline import DATA_INGESTION_COLLECTION_NAME
-from src.constant.training_pipeline import DATA_INGESTION_DATABASE_NAME
+from src.constant.training_pipeline import DATA_INGESTION_DATABASE_NAME,DATA_INGESTION_COLLECTION_NAME
 
 from src.exception.exception import NetworkSecurityException
 from src.logger.logger import logging
@@ -30,6 +30,13 @@ from uvicorn import run as app_run
 from fastapi.responses import Response
 from starlette.responses import RedirectResponse
 import pandas as pd
+from src.utils.ml_utils.model.estimator import ModelResolver
+from src.constant.training_pipeline import SAVED_MODEL_DIR
+from fastapi.templating import Jinja2Templates
+templates = Jinja2Templates(directory="./templates")
+
+
+from src.utils.main_utils.utils import load_object
 
 client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
 
@@ -70,12 +77,12 @@ async def predict_route(request:Request,file: UploadFile = File(...)):
     except Exception as e:
             raise NetworkSecurityException(e,sys)
 '''
-def main():
-    try:
-        training_pipeline = TrainingPipeline()
-        training_pipeline.run_pipeline() 
-    except Exception as e:
-            raise NetworkSecurityException(e,sys)
+# def main():
+#     try:
+#         training_pipeline = TrainingPipeline()
+#         training_pipeline.run_pipeline() 
+#     except Exception as e:
+#             raise NetworkSecurityException(e,sys)
 
                
 if __name__=="__main__":
