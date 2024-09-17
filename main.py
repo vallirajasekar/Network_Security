@@ -18,7 +18,7 @@ os.environ["AWS_SECRET_ACCESS_KEY"]=AWS_SECRET_ACCESS_KEY
 import pymongo
 
 #from src.training_pipeline import DATA_INGESTION_COLLECTION_NAME
-from src.constant.training_pipeline import DATA_INGESTION_DATABASE_NAME,DATA_INGESTION_COLLECTION_NAME
+from src.constant.training_pipeline import *
 
 from src.exception.exception import NetworkSecurityException
 from src.logger.logger import logging
@@ -58,16 +58,20 @@ app.add_middleware(
 async def index():
     return RedirectResponse(url="/docs")
 
+
+        
 @app.get("/train")
 async def train_route():
     try:
         train_pipeline = TrainingPipeline()
-        if train_pipeline.is_pipeline_running:
-            return Response("Training pipeline is already running.")
+        # if train_pipeline.is_pipeline_running:
+        #     return Response("Training pipeline is already running.")
         train_pipeline.run_pipeline()
         return Response("Training successful !!")
     except Exception as e:
             raise NetworkSecurityException(e,sys)
+    
+
     
 
 '''@app.get("/predict")
